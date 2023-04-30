@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate",
+  "name": "weather",
   "version": "1.0.0.",
-  "description": "Some boilerplate code to get you started - get shakin'!",
+  "description": "Basic weather app",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
@@ -17,8 +17,8 @@
     "test:dev:models": "npm run test:dev -- --grep=model",
     "test:dev:routes": "npm run test:dev -- --grep=route"
   },
-  "author": "Fullstack Academy of Code",
-  "license": "MIT",
+  "author": "Luis Samboy",
+  "license": "None",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "compression": "^1.7.4",
