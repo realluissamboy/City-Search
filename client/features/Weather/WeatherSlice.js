@@ -23,3 +23,5 @@ const weatherSlice = createSlice({
     })
   },
 })
+
+weatherSlice.reducer
