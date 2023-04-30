@@ -16,8 +16,23 @@ const Weather = () => {
     return fahrenheit.toFixed(1)
   }
 
+  const handleSubmit = (evt) => {
+    evt.preventDefault()
+    const city = evt.target.city.value
+    dispatch(fetchWeather(city))
+  }
+
   return (
     <div>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="city">Enter City:</label>
+          <input name="city" type="text" />
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
       {weather.main && (
         <div>
           <h3>{weather.name}</h3>
