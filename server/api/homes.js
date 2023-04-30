@@ -1,12 +1,12 @@
 const router = require('express').Router()
 const {
-  models: { User },
+  models: { Home },
 } = require('../db')
 
 router.get('/', async (req, res, next) => {
   try {
-    const users = await User.findAll()
-    res.json(users)
+    const homes = await Home.findAll()
+    res.json(homes)
   } catch (err) {
     next(err)
   }
