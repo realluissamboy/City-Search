@@ -19,3 +19,28 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+#routes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.search {
+  border: white 1px solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather {
+  border: yellow 1px solid;
+}
+
+.home {
+  border: green 1px solid;
+}
+
+.form {
+  width: 800px;
+}
