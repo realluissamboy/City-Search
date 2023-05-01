@@ -17,7 +17,7 @@ const Search = () => {
 
   return (
     <div className="component search">
-      <h1 id="title">Search for a City</h1>
+      <h1 id="title">City Search</h1>
       <form onSubmit={handleSubmit} className="form">
         <input type="text" value={city} onChange={handleInputChange} />
         <button type="submit">Search</button>
