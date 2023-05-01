@@ -1,17 +1,11 @@
 import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
-import AuthForm from '../features/auth/AuthForm'
-import Home from '../features/home/Home'
 import { me } from './store'
 import Weather from '../features/Weather/Weather'
-
-/**
- * COMPONENT
- */
+import Home from '../features/home/Home'
 
 const AppRoutes = () => {
-  const isLoggedIn = useSelector((state) => !!state.auth.me.id)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -20,31 +14,17 @@ const AppRoutes = () => {
 
   return (
     <div>
-      {isLoggedIn ? (
-        <Routes>
-          <Route path="/*" element={<Home />} />
-          <Route to="/home" element={<Home />} />
-        </Routes>
-      ) : (
-        <Routes>
-          <Route
-            path="/*"
-            element={<Weather name="weather" displayName="Weather" />}
-          />
-          <Route
-            path="/login"
-            element={<AuthForm name="login" displayName="Login" />}
-          />
-          <Route
-            path="/signup"
-            element={<AuthForm name="signup" displayName="Sign Up" />}
-          />
-          <Route
-            path="/weather"
-            element={<Weather name="weather" displayName="Weather" />}
-          />
-        </Routes>
-      )}
+      <Routes>
+        <Route
+          path="/*"
+          element={<Weather name="weather" displayName="Weather" />}
+        />
+        <Route
+          path="/weather"
+          element={<Weather name="weather" displayName="Weather" />}
+        />
+        <Route path="/home" element={<Home name="home" displayName="Home" />} />
+      </Routes>
     </div>
   )
 }
