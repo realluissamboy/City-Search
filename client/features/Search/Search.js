@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Home from '../home/Home'
 import Weather from '../Weather/Weather'
+import Generate from '../Generate/Generate'
 
 const Search = () => {
   const [city, setCity] = useState('')
@@ -14,7 +15,6 @@ const Search = () => {
     event.preventDefault()
     setIsSubmitted(true)
   }
-
   return (
     <div className="component search">
       <h1 id="title">City Search</h1>
@@ -26,6 +26,7 @@ const Search = () => {
         <>
           <Home city={city} />
           <Weather city={city} />
+          <Generate city={city} />
         </>
       )}
     </div>

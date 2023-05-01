@@ -11,7 +11,6 @@ const Home = ({ city }) => {
       dispatch(fetchHome(city))
     }
   }, [dispatch, city])
-
   return (
     <div className="component home">
       {homes.map((home) => (

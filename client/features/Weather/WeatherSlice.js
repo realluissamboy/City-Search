@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
-const { apiKey } = require('../../../secrets')
+const { weatherAPIkey } = require('../../../secrets')
 
 export const fetchWeather = createAsyncThunk('weather/fetch', async (city) => {
   try {
     const { data } = await axios.get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherAPIkey}`
     )
     return data
   } catch (err) {
