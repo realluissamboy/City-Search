@@ -16,6 +16,22 @@ const Weather = ({ city }) => {
     return fahrenheit.toFixed(1)
   }
 
+  let weatherJoke = ''
+  if (weather.main) {
+    const temperature = convertToFahrenheit(weather.main.temp)
+    if (temperature > 80) {
+      weatherJoke =
+        "It's getting hot in here! So take off all your clothes... or at least wear some sunscreen!"
+    } else if (temperature >= 70 && temperature <= 80) {
+      weatherJoke = 'Perfect weather for a picnic or a nap in the park!'
+    } else if (temperature >= 60 && temperature <= 69) {
+      weatherJoke = 'Sweater weather is here, folks!'
+    } else {
+      weatherJoke =
+        "It's so cold, I saw a penguin running to Starbucks for a hot drink!"
+    }
+  }
+
   return (
     <div>
       {weather.main && (
@@ -29,6 +45,7 @@ const Weather = ({ city }) => {
             The current temperature is {convertToFahrenheit(weather.main.temp)}
             °F and it feels like {convertToFahrenheit(weather.main.feels_like)}
             °F. The humidity is currently {weather.main.humidity}%.{' '}
+            <div>{weatherJoke}</div>
           </p>
         </div>
       )}
