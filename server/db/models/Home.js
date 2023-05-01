@@ -7,7 +7,7 @@ const Home = db.define(
     statename: {
       type: Sequelize.STRING,
     },
-    regionname: {
+    city: {
       type: Sequelize.STRING,
     },
     homevalues: {

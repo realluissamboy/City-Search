@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-export const fetchHome = createAsyncThunk('home/fetch', async () => {
+export const fetchHome = createAsyncThunk('home/fetch', async (city) => {
   try {
-    const { data } = await axios.get('http://localhost:8080/api/homes')
+    const { data } = await axios.get(`http://localhost:8080/api/homes/${city}`)
     return data
   } catch (err) {
     return err

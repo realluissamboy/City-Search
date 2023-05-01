@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import { me } from './store'
 import Weather from '../features/Weather/Weather'
 import Home from '../features/home/Home'
+import Search from '../features/Search/Search'
 
 const AppRoutes = () => {
   const dispatch = useDispatch()
@@ -17,7 +18,7 @@ const AppRoutes = () => {
       <Routes>
         <Route
           path="/*"
-          element={<Weather name="weather" displayName="Weather" />}
+          element={<Search name="search" displayName="Search" />}
         />
         <Route
           path="/weather"
