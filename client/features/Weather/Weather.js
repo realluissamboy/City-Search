@@ -3,36 +3,21 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchWeather } from './WeatherSlice'
 
-const Weather = () => {
+const Weather = ({ city }) => {
   const dispatch = useDispatch()
   const weather = useSelector((state) => state.weather)
 
   useEffect(() => {
-    dispatch(fetchWeather())
-  }, [dispatch])
+    dispatch(fetchWeather(city))
+  }, [dispatch, city])
 
   const convertToFahrenheit = (kelvin) => {
     const fahrenheit = (kelvin - 273.15) * 1.8 + 32
     return fahrenheit.toFixed(1)
   }
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault()
-    const city = evt.target.city.value
-    dispatch(fetchWeather(city))
-  }
-
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="city">Enter City:</label>
-          <input name="city" type="text" />
-        </div>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
       {weather.main && (
         <div>
           <h3>{weather.name}</h3>

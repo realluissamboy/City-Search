@@ -2,12 +2,14 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchHome } from './homeSlice'
 
-const Home = () => {
+const Home = ({ city }) => {
   const dispatch = useDispatch()
   const homes = useSelector((state) => state.homes)
 
   useEffect(() => {
-    dispatch(fetchHome(city))
+    if (city) {
+      dispatch(fetchHome(city))
+    }
   }, [dispatch, city])
 
   return (
