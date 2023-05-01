@@ -1,13 +1,14 @@
-const Configuration = require(openai)
-const OpenAIApi = require(openai)
-// import { Configuration, OpenAIApi } from 'openai'
+const router = require('express').Router()
+const { Configuration, OpenAIApi } = require('openai')
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: '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',
 })
 const openai = new OpenAIApi(configuration)
+console.log('OpenAI initialized:', openai)
 
-export default async function (req, res) {
+router.post('/', async (req, res) => {
+  console.log('received request:', req.body)
   if (!configuration.apiKey) {
     res.status(500).json({
       error: {
@@ -49,7 +50,7 @@ export default async function (req, res) {
       })
     }
   }
-}
+})
 
 function generatePrompt(city) {
   const capitalizedCity = city[0].toUpperCase() + city.slice(1).toLowerCase()
@@ -62,3 +63,5 @@ Suggestions: Hollywood Sign, Santa Monica Pier, Hollywood Walk of Fame
 City: ${capitalizedCity}
 Suggestions:`
 }
+
+module.exports = router

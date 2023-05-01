@@ -5,6 +5,7 @@ import { me } from './store'
 import Weather from '../features/Weather/Weather'
 import Home from '../features/home/Home'
 import Search from '../features/Search/Search'
+import Generate from '../features/Generate/Generate'
 
 const AppRoutes = () => {
   const dispatch = useDispatch()
@@ -25,6 +26,10 @@ const AppRoutes = () => {
           element={<Weather name="weather" displayName="Weather" />}
         />
         <Route path="/home" element={<Home name="home" displayName="Home" />} />
+        <Route
+          path="/generate"
+          element={<Generate name="generate" displayName="Generate" />}
+        />
       </Routes>
     </div>
   )

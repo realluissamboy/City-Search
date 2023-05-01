@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
-const apiKey = require('../../../secrets')
+const { apiKey } = require('../../../secrets')
 
 export const fetchWeather = createAsyncThunk('weather/fetch', async (city) => {
   try {
@@ -9,7 +9,7 @@ export const fetchWeather = createAsyncThunk('weather/fetch', async (city) => {
     )
     return data
   } catch (err) {
-    return err
+    return err.toJSON()
   }
 })
 
