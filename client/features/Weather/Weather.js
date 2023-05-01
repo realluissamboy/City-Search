@@ -20,11 +20,16 @@ const Weather = ({ city }) => {
     <div>
       {weather.main && (
         <div>
-          <h3>{weather.name}</h3>
-          <p>Temperature: {convertToFahrenheit(weather.main.temp)}°F</p>
-          <p>Feels like: {convertToFahrenheit(weather.main.feels_like)}°F</p>
-          <p>Humidity: {weather.main.humidity}%</p>
-          <p>Weather: {weather.weather[0].main}</p>
+          <h2>Weather</h2>
+          <p>
+            <img
+              src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
+              alt="Weather icon"
+            />
+            The current temperature is {convertToFahrenheit(weather.main.temp)}
+            °F and it feels like {convertToFahrenheit(weather.main.feels_like)}
+            °F. The humidity is currently {weather.main.humidity}%.{' '}
+          </p>
         </div>
       )}
     </div>

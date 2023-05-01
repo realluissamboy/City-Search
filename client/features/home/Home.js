@@ -14,11 +14,15 @@ const Home = ({ city }) => {
 
   return (
     <div>
-      <h3>Home Values by City</h3>
       {homes.map((home) => (
         <div key={home.id}>
-          <h4>{home.city}</h4>
-          <p>Home Value: ${home.homevalues}</p>
+          <div>
+            <h2>Real Estate</h2>
+          </div>
+          <p>
+            {home.city} has a Zillow Home Value Index of $
+            {home.homevalues.toLocaleString()}
+          </p>
         </div>
       ))}
     </div>
