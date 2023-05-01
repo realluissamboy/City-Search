@@ -29,7 +29,7 @@ const Generate = ({ city }) => {
     <div>
       {result && result.result && (
         <div>
-          <h2>Top 3 Places to visit in {city}:</h2>
+          <h2>Top Places to Visit</h2>
           <ul>
             {result.result.split(', ').map((item, i) => (
               <li key={i}>{item}</li>
