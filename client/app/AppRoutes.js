@@ -6,6 +6,7 @@ import Weather from '../features/Weather/Weather'
 import Home from '../features/home/Home'
 import Search from '../features/Search/Search'
 import Generate from '../features/Generate/Generate'
+import Airbnb from '../features/Airbnb/Airbnb'
 
 const AppRoutes = () => {
   const dispatch = useDispatch()
@@ -18,7 +19,7 @@ const AppRoutes = () => {
     <div id="routes">
       <Routes>
         <Route
-          path="/*"
+          path="/"
           element={<Search name="search" displayName="Search" />}
         />
         <Route
@@ -30,6 +31,7 @@ const AppRoutes = () => {
           path="/generate"
           element={<Generate name="generate" displayName="Generate" />}
         />
+        <Route path="/airbnb" element={<Airbnb />} />
       </Routes>
     </div>
   )

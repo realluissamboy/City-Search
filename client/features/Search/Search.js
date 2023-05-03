@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Home from '../home/Home'
 import Weather from '../Weather/Weather'
 import Generate from '../Generate/Generate'
+import Airbnb from '../Airbnb/Airbnb'
 
 const Search = () => {
   const [city, setCity] = useState('')
@@ -18,6 +19,7 @@ const Search = () => {
   return (
     <div className="component search">
       <h1 id="title">City Search</h1>
+
       <form onSubmit={handleSubmit} className="form">
         <input type="text" value={city} onChange={handleInputChange} />
         <button type="submit">Search</button>
@@ -27,6 +29,7 @@ const Search = () => {
           <Home city={city} />
           <Weather city={city} />
           <Generate city={city} />
+          <Airbnb city={city} />
         </>
       )}
     </div>
