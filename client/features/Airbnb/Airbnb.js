@@ -14,12 +14,34 @@ const Airbnb = ({ city }) => {
   return (
     <>
       <div>
+        {" "}
+        Airbnb
         {airbnb.results && (
-          <div>
-            <h2>Airbnb</h2>
-            <div key="results.id">
-              The results are <li>{airbnb.results[0].name}</li>{" "}
-            </div>
+          <div className="airbnb">
+            {/* <h2>Airbnb</h2> */}
+            {airbnb.results.map((result, index) => (
+              <div key={`result-${index}`}>
+                <div>
+                  <img
+                    src={result.images[0]}
+                    alt="First Airbnb image"
+                    style={{ width: "300px", height: "225px" }}
+                  />
+                  <a
+                    href={result.deeplink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {" "}
+                    <div>{result.name}</div>
+                  </a>
+                  <li>Bedrooms: {result.bedrooms}</li>{" "}
+                  <li>Bathrooms: {result.bathrooms}</li>{" "}
+                  <li>Rate: ${result.price.rate} nightly</li>{" "}
+                  <li>Amenities: {result.previewAmenities.join(", ")}</li>{" "}
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>

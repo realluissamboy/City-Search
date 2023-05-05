@@ -28,7 +28,7 @@ export const fetchAirbnbListings = createAsyncThunk(
       const { data } = await axios.request(options);
       return data;
     } catch (err) {
-      return err.toJSON();
+      throw new Error("Failed to fetch Airbnb listings");
     }
   }
 );

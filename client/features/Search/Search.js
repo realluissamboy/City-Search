@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
-import Home from '../home/Home'
-import Weather from '../Weather/Weather'
-import Generate from '../Generate/Generate'
-import Airbnb from '../Airbnb/Airbnb'
+import React, { useState } from "react";
+import Home from "../home/Home";
+import Weather from "../Weather/Weather";
+import Generate from "../Generate/Generate";
+import Airbnb from "../Airbnb/Airbnb";
 
 const Search = () => {
-  const [city, setCity] = useState('')
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [city, setCity] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleInputChange = (event) => {
-    setCity(event.target.value)
-  }
+    setCity(event.target.value);
+  };
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    setIsSubmitted(true)
-  }
+    event.preventDefault();
+    setIsSubmitted(true);
+  };
   return (
     <div className="component search">
       <h1 id="title">City Search</h1>
@@ -33,7 +33,7 @@ const Search = () => {
         </>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

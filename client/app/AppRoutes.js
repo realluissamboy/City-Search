@@ -1,20 +1,14 @@
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { Route, Routes } from 'react-router-dom'
-import { me } from './store'
-import Weather from '../features/Weather/Weather'
-import Home from '../features/home/Home'
-import Search from '../features/Search/Search'
-import Generate from '../features/Generate/Generate'
-import Airbnb from '../features/Airbnb/Airbnb'
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+
+import Weather from "../features/Weather/Weather";
+import Home from "../features/home/Home";
+import Search from "../features/Search/Search";
+import Generate from "../features/Generate/Generate";
+import Airbnb from "../features/Airbnb/Airbnb";
 
 const AppRoutes = () => {
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(me())
-  }, [])
-
   return (
     <div id="routes">
       <Routes>
@@ -34,7 +28,7 @@ const AppRoutes = () => {
         <Route path="/airbnb" element={<Airbnb />} />
       </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default AppRoutes
+export default AppRoutes;
