@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { XRAPIDAPIKEY } from "../../secrets";
 
 export const fetchAirbnbListings = createAsyncThunk(
   "airbnb/fetch",
@@ -19,7 +20,7 @@ export const fetchAirbnbListings = createAsyncThunk(
         currency: "USD",
       },
       headers: {
-        "X-RapidAPI-Key": "7085afcacamshc630e35d43b7a57p1c29f0jsn1141b67ce584",
+        "X-RapidAPI-Key": XRAPIDAPIKEY,
         "X-RapidAPI-Host": "airbnb13.p.rapidapi.com",
       },
     };

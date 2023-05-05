@@ -1,8 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-const WEATHERAPIKEY = "092f76be6c13aa4bfc94b42b1c7f76f7";
+// require("dotenv").config();
+// const WEATHERAPIKEY = "092f76be6c13aa4bfc94b42b1c7f76f7";
+import { WEATHERAPIKEY } from "../../secrets";
 
 export const fetchWeather = createAsyncThunk("weather/fetch", async (city) => {
+  // const WEATHERAPIKEY = process.env.WEATHERAPIKEY;
+  console.log("hello world");
   try {
     const { data } = await axios.get(
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WEATHERAPIKEY}`

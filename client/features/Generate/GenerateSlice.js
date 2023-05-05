@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { Configuration, OpenAIApi } from "openai";
-const OPENAIAPIKEY = require("../../../.env");
+// const OPENAIAPIKEY = require("../../../.env");
+require("dotenv").config();
 
 const configuration = new Configuration({
-  apiKey: OPENAIAPIKEY,
+  apiKey: process.env.OPENAIAPIKEY,
 });
 const openai = new OpenAIApi(configuration);
 
