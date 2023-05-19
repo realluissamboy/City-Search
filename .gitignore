@@ -7,3 +7,5 @@ yarn-error.log
 package-lock.json
 secrets.js
 .env
+
+sample.json
