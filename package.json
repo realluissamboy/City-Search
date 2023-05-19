@@ -1,6 +1,6 @@
 {
   "name": "citysearch",
-  "version": "1.0.0.",
+  "version": "1.0.0",
   "description": "A web application which allows users to find basic info about weather and real estate. Additionally, it uses ChatGPT to suggest top places to visit in the given city",
   "main": "index.js",
   "scripts": {
