@@ -6,6 +6,7 @@ module.exports = {
   },
   context: __dirname,
   devtool: "source-map",
+  mode: "development",
   module: {
     rules: [
       {
