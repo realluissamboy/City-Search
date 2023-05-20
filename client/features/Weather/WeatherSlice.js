@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { WEATHERAPIKEY } from "../../secrets";
+require("dotenv").config();
+const WEATHERAPIKEY = process.env.WEATHERAPIKEY;
 
 export const fetchWeather = createAsyncThunk("weather/fetch", async (city) => {
   console.log("hello world");
