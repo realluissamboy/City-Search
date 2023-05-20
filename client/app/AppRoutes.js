@@ -6,7 +6,6 @@ import Weather from "../features/Weather/Weather";
 import Home from "../features/home/Home";
 import Search from "../features/Search/Search";
 import Generate from "../features/Generate/Generate";
-import Airbnb from "../features/Airbnb/Airbnb";
 
 const AppRoutes = () => {
   return (
@@ -25,7 +24,6 @@ const AppRoutes = () => {
           path="/generate"
           element={<Generate name="generate" displayName="Generate" />}
         />
-        <Route path="/airbnb" element={<Airbnb />} />
       </Routes>
     </div>
   );

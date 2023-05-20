@@ -2,13 +2,9 @@ import React, { useState } from "react";
 import Home from "../home/Home";
 import Weather from "../Weather/Weather";
 import Generate from "../Generate/Generate";
-import Airbnb from "../Airbnb/Airbnb";
 
 const Search = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(1);
   const [city, setCity] = useState("");
-  const [additionalInfo, setAdditionalInfo] = useState("");
-  const [extraInfo, setExtraInfo] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleCityChange = (event) => {
@@ -43,7 +39,6 @@ const Search = () => {
           <Home city={city} />
           <Weather city={city} />
           <Generate city={city} />
-          <Airbnb city={city} />
         </>
       )}
     </div>
